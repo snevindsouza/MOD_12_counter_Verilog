@@ -64,7 +64,7 @@ always@(posedge clkdiv2) begin
 end
 
 
-//Structure of MOD_12_counter
+//Structure of MOD_12_counter (struciural Verilog)
 d_flip_flop dff0(qb[0],clkdiv,reset,q[0],qb[0]);
 xor x0(w1 ,q[0],q[1]);
 d_flip_flop dff1(w1,clkdiv,reset,q[1],qb[1]);
