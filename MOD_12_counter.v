@@ -19,19 +19,19 @@ initial begin
 		flag = 1'b0;
 end
 
-always @(posedge clk) begin
+always @(posedge clk) begin	//4MHz clock
 	i = i+1; j = j+1;
-	if (i == 1000) begin
+	if (i == 1000) begin	//i==2000000 for 4MHz clock (depends on the FPGA)
 		clkdiv = ~clkdiv;
 		i = 0;
 	end
-	if (j == 1) begin
+	if (j == 1) begin	//j==2000 for 4MHz clock
 		clkdiv2 = ~clkdiv2;
 		j = 0;
 	end
 end
 
-always@(posedge clkdiv2) begin
+always@(posedge clkdiv2) begin	 
 	if (flag == 1'b0) begin
 		ctrl = 4'b0111;
 		case (q)
